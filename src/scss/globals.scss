@@ -1,0 +1,116 @@
+// ФУНКЦИИ====================================================================
+@import "./settings/functions";
+
+// </ФУНКЦИИ>=================================================================
+
+// <Подключаем шрифты>========================================================
+@import "./settings/fonts";
+
+// </Подключаем шрифты>=======================================================
+
+// <ОБНУЛЕНИЕ>================================================================
+@import "./settings/normalize";
+
+// </ОБНУЛЕНИЕ>===============================================================
+
+// <ПЕРЕМЕННЫЕ>===============================================================
+$containerWidth: 140rem;
+
+:root {
+  // base
+  --font-family: sans-serif;
+  --font-weight: 500;
+  // --content-width: 137rem;
+  // --container-offset: 1.5rem;
+  // --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  --transition: 0.3s;
+  --radius: 0.5rem;
+
+  --page-bg: hsl(240, 33%, 97%);
+  --backdrop: hsla(0, 0%, 0%, 0.75);
+
+  // Primary
+  --clr-primary-200: #f9856c;
+  --clr-primary-300: #f75c3b;
+  --clr-primary-400: #b72708;
+  --clr-secondary-300: #f7e6bb;
+  --clr-secondary-400: #ffc83a;
+  --clr-secondary-500: #ffb500;
+  --clr-secondary-700: #00a171;
+  --clr-secondary-900: #4791ff;
+
+  // Light
+  --clr-default-100: #fff;
+  --clr-default-200: #f6f6f6;
+  --clr-default-300: #ebecee;
+  --clr-default-400: #bfc4c8;
+  --clr-default-500: #acb0b3;
+
+  // Black
+  --clr-default-700: #74727f;
+  --clr-default-800: #494850;
+  --clr-default-900: #1f1f1f;
+
+  // Statuses
+  --clr-status-success: #00a271;
+  --clr-status-error: #a10000;
+
+  --clr-label-error: #f44435;
+  --clr-label-warn: #ffc108;
+  --clr-label-success: #4bae51;
+}
+
+// </ПЕРЕМЕННЫЕ>==============================================================
+
+// <ОБОЛОЧКИ>================================================================
+body {
+  font-size: 1.5rem;
+  color: var(--clr-default-900);
+}
+
+main {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  background-image: var(--bg);
+  background-position: center;
+  background-size: auto;
+  background-repeat: repeat;
+  background-color: var(--page-bg);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 32rem;
+  min-height: 100vh;
+}
+
+// </ОБОЛОЧКИ>===============================================================
+
+// <СТИЛИ>===================================================================
+// .container {
+//   margin-right: auto;
+//   margin-left: auto;
+//   padding-right: var(--container-offset);
+//   padding-left: var(--container-offset);
+//   width: 100%;
+//   max-width: var(--container-width);
+// }
+
+// Components
+@import "./components/common/flow.scss";
+
+@import "./components/nodes/table.scss";
+
+@import "./components/ui/tooltip.scss";
+
+// Libs
+@import "./libs/react-flow.scss";
+
+
+// UI
+@import "./ui.scss";
+
+// </СТИЛИ>==================================================================

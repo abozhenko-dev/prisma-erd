@@ -1,0 +1,23 @@
+/* stylelint-disable scss/dollar-variable-colon-newline-after */
+@use "sass:math";
+
+@function fluid(
+  $max-value: 1rem,
+  $min-value: 1rem,
+  $min-vw: 32rem,
+  $max-vw: $containerWidth
+) {
+  // $factor: 1 / ($max-vw - $min-vw) * ($max-value - $min-value);
+
+  $factor: math.div(1, $max-vw - $min-vw) * ($max-value - $min-value);
+  /* stylelint-disable-next-line scss/no-global-function-names */
+  $calc-value: unquote(
+    "#{ $min-value - ( $min-vw * $factor ) } + #{ 100vw * $factor }"
+  );
+
+  @return clamp(
+    #{if($min-value > $max-value, $max-value, $min-value)},
+    #{$calc-value},
+    #{if($min-value > $max-value, $min-value, $max-value)}
+  );
+}

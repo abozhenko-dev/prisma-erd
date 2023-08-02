@@ -1,0 +1,48 @@
+{
+  "name": "prisma-erd",
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "dev": "cross-env VISUALIZER_PATH_TO_PRISMA_SCHEMA=data/schema.prisma next dev",
+    "build": "next build",
+    "start": "cross-env VISUALIZER_PATH_TO_PRISMA_SCHEMA=data/schema.prisma next start",
+    "lint": "next lint",
+    "visualizer": "tsx scripts/visualizer.ts"
+  },
+  "dependencies": {
+    "@prisma/generator-helper": "^4.16.2",
+    "@prisma/internals": "^4.16.2",
+    "@types/lodash": "^4.14.195",
+    "eslint": "^8.44.0",
+    "eslint-config-next": "^13.4.8",
+    "lodash": "^4.17.21",
+    "next": "13.4.8",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "reactflow": "^11.7.4",
+    "swr": "^2.2.0"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
+    "@types/node": "20.3.3",
+    "@types/react": "18.2.14",
+    "@types/react-dom": "18.2.6",
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/parser": "^5.61.0",
+    "cross-env": "^7.0.3",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "postcss": "^8.4.24",
+    "postcss-scss": "^4.0.6",
+    "prettier": "^2.8.8",
+    "sass": "^1.63.6",
+    "stylelint": "^15.10.0",
+    "stylelint-formatter-pretty": "^3.2.0",
+    "stylelint-order": "^6.0.3",
+    "tsx": "^3.12.7",
+    "typescript": "5.1.6"
+  }
+}

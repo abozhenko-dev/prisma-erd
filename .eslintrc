@@ -1,0 +1,293 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:@next/next/recommended",
+    "plugin:import/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "react-hooks", "import"],
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    },
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "@typescript-eslint/no-non-null-assertion": "off",
+
+    // BASE RULES
+    // Кавычки
+    "quotes": ["warn", "double"],
+    // Отступы
+    // "indent": ["warn", 2],
+    // Гетеры всегда должны что-то возвращать
+    "getter-return": "warn",
+    // Неправильные условия в цикле for
+    "for-direction": "error",
+    // Ворнинг на дебагеры
+    "no-debugger": "warn",
+    // Консоль
+    "no-console": "warn",
+    // Дублирование аргументов в функции
+    "no-dupe-args": "error",
+    // Дублирование методов в классе
+    "no-dupe-class-members": "error",
+    // Дублирование ключей в import/named
+    "no-dupe-keys": "error",
+    // Дублирование импортов
+    // "no-duplicate-imports": "warn",
+    // Дублирование условий в switch case
+    "no-duplicate-case": "error",
+    // Пустая группа в регулярках
+    "no-empty-character-class": "error",
+    // Пустая деструктуризация
+    "no-empty-pattern": "error",
+    // Нельзя перезаписать ошибку в catch
+    "no-ex-assign": "error",
+    // Switch case обязательно должен иметь break
+    "no-fallthrough": "error",
+    // Нельзя переопределять функцию
+    "no-func-assign": "error",
+    // Нельзя переопределять импорты
+    "no-import-assign": "error",
+    // Ошибка на не валидные регулярки
+    "no-invalid-regexp": "error",
+    // Неккоректые отступы
+    "no-irregular-whitespace": "error",
+    // Глобальные объекты нельзя вызывать как функцию. (Нужен new)
+    "no-obj-calls": "error",
+    // Нельзя присваивать переменную этой же переменной
+    "no-self-assign": "error",
+    // Нельзя сравнивать одни и те же переменные
+    "no-self-compare": "error",
+    // Сеттер не должен возвращать никакие значения
+    "no-setter-return": "error",
+    // Пустое значение в списке между другими значениям считается недопустимым
+    "no-sparse-arrays": "warn",
+    // Использовать только обратные кавычки для шаблонных литералов
+    "no-template-curly-in-string": "error",
+    // Нельзя использовать this перед super()
+    "no-this-before-super": "error",
+    // Нельзя сравнивать значение с undefined
+    // "no-undef": "error",
+    // Никаких выражений типа ;(() => {})() (Точка с запятой будет ошибкой)
+    "no-unexpected-multiline": "error",
+    // После return нельзя писать код
+    "no-unreachable": "error",
+    // Нельзя указывать finally в try catch, если не объявил catch
+    "no-unsafe-finally": "error",
+    // Отрицание всегда должно применятся к выражению. Поэтому нужно использовать скобки
+    "no-unsafe-negation": "warn",
+    // Не допускаются не используемые приватные переменные в классах
+    "no-unused-private-class-members": "error",
+    // Никаких неиспользуемых переменных
+    // "no-unused-vars": "warn",
+    // Нельзя использовать сущность до её определения
+    "no-use-before-define": "error",
+    // Использовать IsNaN() вместо Number.NaN или NaN
+    "use-isnan": "error",
+
+    // SUGGESTIONS
+    // Код стайлинг для стрелочных функций
+    "arrow-body-style": "warn",
+    // Предпочтительно использовать
+    "camelcase": "warn",
+    // Обязательно нужно использовать this. (в основном, в статических методах)
+    "class-methods-use-this": "warn",
+    // Код стайлинг для условий/циклов
+    // "curly": ["warn", "multi", "consistent"],
+    // В switch case обязательно должен быть default
+    "default-case": "error",
+    // default в switch case должен быть последним
+    "default-case-last": "error",
+    // Предпочтительно строгое сравнение
+    "eqeqeq": "warn",
+    // Приоритетно использовать стрелочные функции
+    "func-style": ["warn", "expression"],
+    // Отключаем ограничение на максимальное количество классов в файле
+    "max-classes-per-file": "off",
+    // Желательно не оставлять алёрты
+    "no-alert": "warn",
+    // Для создания нового массива с помощью класса Array нужно использовать new
+    "no-array-constructor": "error",
+    // Нельзя использовать единичный оператор (|)
+    "no-bitwise": "error",
+    // В switch case нужно писать фигурные скобки
+    "no-case-declarations": "error",
+    // Нельзя оставлять пустые блоки
+    "no-empty": "warn",
+    // Нельзя оставлять пустые функции
+    "no-empty-function": "warn",
+    // Только строгое сравнение для null
+    "no-eq-null": "warn",
+    // Нельзя использовать eval
+    "no-eval": "error",
+    // Правило ругается на ненужные приведения к типу Boolean
+    "no-extra-boolean-cast": "warn",
+    // Ругается на ненужные точки с запятой
+    "no-extra-semi": "warn",
+    // Запрещает начальные и конечные точки в числовых литералах
+    "no-floating-decimal": "warn",
+    // Нельзя глобальным объектам что-то присваивать
+    "no-global-assign": "error",
+    // Ругается на невалидный this
+    "no-invalid-this": "warn",
+    // Ругается на ненужные блоки
+    "no-lone-blocks": "warn",
+    // Ругается на пустой if
+    "no-lonely-if": "warn",
+    // Ругается на множественное присваивание
+    "no-multi-assign": "warn",
+    // Ругается на длинные тернарные условия
+    "no-nested-ternary": "warn",
+    // new Number() нужно всегда присваивать переменной
+    "no-new": "error",
+    // Создание типов только через литерал
+    "no-new-func": "error",
+    "no-new-object": "error",
+    "no-new-wrappers": "error",
+    "no-new-symbol": "error",
+    // Ругается на обратный слэш, когда он не нужен
+    "no-nonoctal-decimal-escape": "warn",
+    // Нельзя перезаписывать аргументы в функциях
+    // "no-param-reassign": "error",
+    // Запрещает использовать присваивание в return у функции
+    "no-return-assign": "error",
+    // Нельзя использовать await в return у функции
+    "no-return-await": "warn",
+    // Значения, которые перечисляются через запятую, нужно обернуть в скобки
+    "no-sequences": "error",
+    // Нельзя использовать зарезервированные слова
+    "no-shadow-restricted-names": "error",
+    // Нельзя инициализировать переменную с значением undefined
+    "no-undef-init": "error",
+    // Нельзя использовать проверку val === undefined
+    // "no-undefined": "error",
+    // Ругается на ненужный тернарный оператор
+    "no-unneeded-ternary": "error",
+    // Ругается на неиспользуемые выражения
+    "no-unused-expressions": "error",
+    // Ругается на использование бессмысленных выражений
+    "no-useless-computed-key": "error",
+    "no-useless-concat": "error",
+    "no-useless-constructor": "error",
+    "no-useless-escape": "error",
+    "no-useless-rename": "error",
+    "no-useless-return": "error",
+    "no-useless-call": "error",
+    // Ругается на var
+    "no-var": "error",
+    // Сокращенное присваивание в объекте ({ a } вместо { a: a})
+    "object-shorthand": "warn",
+    // Ворнинг, когда делаем так a = a + b, а не так a += b
+    "operator-assignment": "warn",
+    // Предпочтительно использовать стрелочные функции как колбэк
+    "prefer-arrow-callback": "warn",
+    // Предпочтительно использовать константы
+    "prefer-const": "warn",
+    // Предпочтительно использовать деструктуризацию
+    // "prefer-destructuring": "warn",
+    // Предпочтительно использовать литералы для работы с числами
+    "prefer-exponentiation-operator": "warn",
+    // Предпочтительно использовать спред операторы для работы с объектами
+    "prefer-object-spread": "warn",
+    // Предпочтительно использовать рест параметры
+    "prefer-rest-params": "warn",
+    // Предпочтительно использовать спред
+    "prefer-spread": "warn",
+    // Предпочтительно использовать шаблонные литералы
+    "prefer-template": "warn",
+    // Ругается, когда есть async, но нет await
+    "require-await": "error",
+    // Ругается, когда сравниваем значение с переменной, а не переменную со значением
+    "yoda": "error",
+
+    // LAYOUTS & FORMATTING
+    "array-bracket-newline": ["warn", "consistent"],
+    // "array-bracket-spacing": ["warn", "always"],
+    "array-element-newline": ["warn", "consistent"],
+    "arrow-parens": ["warn", "always"],
+    "arrow-spacing": ["warn", { "before": true, "after": true }],
+    "block-spacing": ["warn", "always"],
+    "brace-style": ["warn", "1tbs", { "allowSingleLine": true }],
+    "comma-dangle": ["warn", "never"],
+    "comma-spacing": ["warn", { "before": false, "after": true }],
+    "comma-style": ["warn", "last"],
+    "computed-property-spacing": ["warn", "never"],
+    "dot-location": ["warn", "property"],
+    "eol-last": ["warn", "always"],
+    "func-call-spacing": ["warn", "never"],
+    "function-call-argument-newline": ["warn", "consistent"],
+    // "function-paren-newline": ["warn", "consistent"],
+    "generator-star-spacing": ["warn", "after"],
+    // "implicit-arrow-linebreak": ["warn", "beside"],
+    "key-spacing": ["warn", { "beforeColon": false, "afterColon": true }],
+    "keyword-spacing": ["warn", { "before": true, "after": true }],
+    // "line-comment-position": ["warn", "above"],
+    "lines-between-class-members": ["warn", "always"],
+    "max-statements-per-line": ["warn", { "max": 1 }],
+    "newline-per-chained-call": "warn",
+    "no-multi-spaces": "warn",
+    "no-multiple-empty-lines": ["warn", { "max": 1 }],
+    "no-trailing-spaces": "warn",
+    "no-whitespace-before-property": "warn",
+    "nonblock-statement-body-position": ["warn", "beside"],
+    "object-curly-newline": ["warn", { "consistent": true }],
+    "object-curly-spacing": ["warn", "always"],
+    "object-property-newline": ["warn", { "allowAllPropertiesOnSameLine": true }],
+    "operator-linebreak": ["warn", "after"],
+    "rest-spread-spacing": ["warn", "never"],
+    // Точки с запятой
+    "semi-spacing": ["warn", { "before": false, "after": true }],
+    "semi": ["warn", "always"],
+    "semi-style": ["warn", "last"],
+    "space-before-blocks": ["warn", "always"],
+    "space-infix-ops": "warn",
+    "space-unary-ops": ["warn", { "words": true, "nonwords": false }],
+    "switch-colon-spacing": ["warn", { "before": false, "after": true }],
+    "template-curly-spacing": ["warn", "never"],
+    "wrap-iife": ["warn", "any"],
+    "wrap-regex": "warn",
+
+    // IMPORT RULES
+    // "import/order": [
+    //   "warn",
+    //   {
+    //     "groups": [
+    //       "builtin",
+    //       "type",
+    //       "external",
+    //       "internal",
+    //       "parent",
+    //       "sibling",
+    //       "index",
+    //       "object"
+    //     ],
+    //     "alphabetize": {
+    //       "order": "asc",
+    //       "caseInsensitive": true
+    //     }
+    //   }
+    // ],
+    "import/no-unresolved": "off",
+    "import/named": "off",
+
+    // REACT RULES
+    "jsx-quotes": ["warn", "prefer-double"],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/prop-types": "off"
+  }
+}

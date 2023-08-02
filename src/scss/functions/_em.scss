@@ -1,0 +1,7 @@
+@use "sass:math";
+
+$defaultSize: 16;
+
+@function em($breakpoint) {
+  @return math.div($breakpoint, $defaultSize) + em;
+}

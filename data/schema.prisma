@@ -1,0 +1,62 @@
+// ---------------------------------------------------------------------------------------------- //
+//                                         Prisma Settings                                        //
+// ---------------------------------------------------------------------------------------------- //
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+// ---------------------------------------------------------------------------------------------- //
+//                                             Models                                             //
+// ---------------------------------------------------------------------------------------------- //
+
+model Avatar {
+  id   Int    @id @default(autoincrement())
+  path String
+
+  user User?
+}
+
+model User {
+  id           Int      @id @default(autoincrement())
+  name         String
+  email        String   @unique
+  phone        String
+  isRegistered Boolean? @default(false) @map("is_registered")
+  password     String
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  roles Role[]
+
+  avatar   Avatar @relation(fields: [avatarId], references: [id])
+  avatarId Int    @unique @map("avatar_id")
+  posts    Post[]
+
+  @@map("user")
+}
+
+model Post {
+  id          Int      @id @default(autoincrement())
+  title       String
+  content     String
+  desctiption String?
+  test        String[]
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  author   User @relation(fields: [authorId], references: [id])
+  authorId Int  @map("author_id")
+
+  @@map("post")
+}
+
+enum Role {
+  READER
+  EDITOR
+}

@@ -1,0 +1,27 @@
+.tooltip {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  z-index: 51;
+  padding: 1rem;
+  padding-left: 1rem;
+  width: max-content;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-50%);
+  transition: opacity 0.3s;
+  pointer-events: none;
+
+  &__inner {
+    border-radius: 4px;
+    padding: 1rem;
+    box-shadow: .4rem .4rem 4rem -1rem rgba(0,0,0,0.42);
+    background-color: var(--clr-default-100);
+  }
+
+  &__body {
+    margin-top: 1rem;
+    border-top: .1rem solid var(--clr-default-900);
+    padding-top: 1rem
+  }
+}
